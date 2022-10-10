@@ -1,0 +1,28 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 4, Errors: 0, Skipped: 0, Time elapsed: 212.507 s <<< FAILURE! - in TestSuite
+runScenario(framework.runners.ServiceRequestSecondTest)  Time elapsed: 5.88 s  <<< FAILURE!
+java.lang.NullPointerException
+
+runScenario(framework.runners.ServiceRequestSecondTest)  Time elapsed: 9.42 s  <<< FAILURE!
+java.lang.AssertionError: expected [PASSED] but found [FAILED]
+
+runScenario(framework.runners.ServiceRequestSecondTest)  Time elapsed: 11.954 s  <<< FAILURE!
+com.codeborne.selenide.ex.ElementNotFound: 
+Element not found {By.name: locality/option[text:Bamoko]}
+Expected: exist
+Screenshot: file:/C:/Git/clm_selenide_cucumber/target/reports/tests/1628239395058.1.png
+Page source: file:/C:/Git/clm_selenide_cucumber/target/reports/tests/1628239395058.1.html
+Timeout: 20 s.
+Caused by: NoSuchElementException: Cannot locate element with text: Bamoko
+Caused by: org.openqa.selenium.NoSuchElementException: 
+Cannot locate element with text: Bamoko
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'BAVYSYAKI', ip: '10.50.56.10', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_231'
+Driver info: driver.version: unknown
+
+runScenario(framework.runners.ServiceRequestSecondTest)  Time elapsed: 105.044 s  <<< FAILURE!
+java.lang.AssertionError: expected [PASSED] but found [FAILED]
+

@@ -1,0 +1,180 @@
+<html lang="en" dir="ltr"><head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>WSO2 Identity Server</title>
+
+        <link rel="icon" href="images/favicon.png" type="image/x-icon">
+        <link href="libs/bootstrap_3.3.5/css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/Roboto.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/custom.css">
+        <link rel="stylesheet" href="css/tecnotree-ui-library-ltr.css">
+        <link rel="stylesheet" href="css/vendor.css">
+        <link rel="stylesheet" href="css/localisation.css">
+        <!--[if lt IE 9]>
+        <script src="js/html5shiv.min.js"></script>
+        <script src="js/respond.min.js"></script>
+        <![endif]-->
+        <script src="/authenticationendpoint/assets/js/jquery-min.js"></script>
+        <script src="/authenticationendpoint/js/scripts.js"></script>
+    </head>
+
+    <body>
+
+    <!-- header -->
+    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <div class="logo"></div>
+            </div>
+        </div> <!-- end of container-fluid -->
+    </nav>
+    <!-- /header -->
+    <!-- page content -->
+    <div class="container-fluid body-wrapper">
+
+        <div class="col-sm-6 col-sm-offset-4">
+            <!-- content -->
+            <div class="panel panel-default loginpanel">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Log In</h3>
+                </div>
+                <div class="panel-body">
+                    
+
+                    
+                    
+
+
+
+
+
+<form action="../commonauth" method="post" id="loginForm" class="form-horizontal loginform" autocomplete="off">
+    
+    
+    
+    
+
+    <div class="form-group has-feedback left-addon">
+        <input id="username" name="username" type="text" class="form-control" tabindex="0" placeholder="Username">
+        <i class="glyphicon glyphicon-user form-control-feedback"></i>
+
+    </div>
+    <div class="form-group has-feedback left-addon">
+        <input id="password" name="password" type="password" class="form-control" placeholder="Password">
+        <i class="glyphicon glyphicon-lock form-control-feedback"></i>
+    </div>
+    <div class="form-group has-feedback left-addon">
+        <input type="hidden" name="sessionDataKey" value="4059c5f0-a526-47b4-b944-202efcd2e69d">
+        <input type="hidden" id="chkRemember" name="chkRemember" value="on">
+    </div>
+
+    <div class="form-group">
+        <div>
+            <button class="btn btn-primary text-uppercase pull-right" type="submit">Log In</button>
+        </div>
+    </div>
+</form>
+
+                    <div style="text-align:center">
+                        
+                        <a href="email_recovery.jsp?nextPage=%2Fauthenticationendpoint%2Flogin.do%3Fauthenticators%3DIPAuthenticator%253ALOCAL%26response_type%3Dcode%26type%3Doidc%26tenantDomain%3Dcarbon.super%26client_id%3DmrLqP0F3ByF3GRof2G72Ahvy1hMa%26relyingParty%3DmrLqP0F3ByF3GRof2G72Ahvy1hMa%26passiveAuth%3Dfalse%26isSaaSApp%3Dfalse%26commonAuthCallerPath%3D%252Foauth2%252Fauthorize%26scope%3Dopenid%26forceAuth%3Dfalse%26sessionDataKey%3D4059c5f0-a526-47b4-b944-202efcd2e69d%26redirect_uri%3Dhttp%253A%252F%252F10.66.52.72%252Fclm-ui%252F%2523%252Fauthcode%26state%3Dopenid%26sp%3Dclm-reg-ui">Forgot password?</a>
+
+                        
+
+
+
+
+<div class="lang-selector">
+
+</div>
+
+                    </div>
+                    
+
+                    
+
+                    
+                    
+                </div>
+                <!-- /content -->
+            </div>
+            <!-- /content/body -->
+        </div>
+    </div>
+    <!-- footer -->
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        
+        <div class="container-fluid pull-left">
+            <div class="hidden-sm hidden-md">
+                <div class="logo"></div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <ul class="nav navbar-nav pull-right">
+                <li>
+                    <a href="" tabindex="-1"><i><small>Powered by </small></i>&nbsp;<b>TECNOTREE</b></a>
+                </li>
+            </ul>
+        </div>
+        
+    </nav> <!-- /footer -->
+
+
+    <script src="libs/jquery_1.11.3/jquery-1.11.3.js"></script>
+    <script src="libs/bootstrap_3.3.5/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.main-link').click(function () {
+                $('.main-link').next().hide();
+                $(this).next().toggle('fast');
+                var w = $(document).width();
+                var h = $(document).height();
+                $('.overlay').css("width", w + "px").css("height", h + "px").show();
+            });
+            $('[data-toggle="popover"]').popover();
+            $('.overlay').click(function () {
+                $(this).hide();
+                $('.main-link').next().hide();
+            });
+
+        });
+        function myFunction(key, value, name) {
+            var object = document.getElementById(name);
+            var domain = object.value;
+
+
+            if (domain != "") {
+                document.location = "../commonauth?idp=" + key + "&authenticator=" + value +
+                        "&sessionDataKey=4059c5f0-a526-47b4-b944-202efcd2e69d&domain=" +
+                        domain;
+            } else {
+                document.location = "../commonauth?idp=" + key + "&authenticator=" + value +
+                        "&sessionDataKey=4059c5f0-a526-47b4-b944-202efcd2e69d";
+            }
+        }
+
+        function handleNoDomain(key, value) {
+            document.location = "../commonauth?idp=" + key + "&authenticator=" + value +
+                    "&sessionDataKey=4059c5f0-a526-47b4-b944-202efcd2e69d";
+        }
+
+        $('#popover').popover({
+            html: true,
+            title: function () {
+                return $("#popover-head").html();
+            },
+            content: function () {
+                return $("#popover-content").html();
+            }
+        });
+
+    </script>
+
+    
+    
+
+
+
+</body></html>

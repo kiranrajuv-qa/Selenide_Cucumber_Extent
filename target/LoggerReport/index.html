@@ -1,0 +1,1299 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>ExtentReports</title>
+	<meta name="description" content="extent" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-barstyle" content="black-translucent">
+	<meta name="apple-mobile-web-app-title" content="extent">
+	<meta name="mobile-web-app-capable" content="yes">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@832f979664f9d68bf618db3ac87498ac6c1a6390/logger/css/logger-style.css" type="text/css" />
+</head>
+	<script type="text/javascript">
+		/*! json-tree - v0.2.2 - 2017-09-25, MIT LICENSE */
+		var JSONTree=function(){var n={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","/":"&#x2F;"},t=0,r=0;this.create=function(n,t){return r+=1,N(u(n,0,!1),{class:"jstValue"})};var e=function(t){return t.replace(/[&<>'"]/g,function(t){return n[t]})},s=function(){return r+"_"+t++},u=function(n,t,r){if(null===n)return f(r?t:0);switch(typeof n){case"boolean":return l(n,r?t:0);case"number":return i(n,r?t:0);case"string":return o(n,r?t:0);default:return n instanceof Array?a(n,t,r):c(n,t,r)}},c=function(n,t,r){var e=s(),u=Object.keys(n).map(function(r){return j(r,n[r],t+1,!0)}).join(m()),c=[g("{",r?t:0,e),N(u,{id:e}),p("}",t)].join("\n");return N(c,{})},a=function(n,t,r){var e=s(),c=n.map(function(n){return u(n,t+1,!0)}).join(m());return[g("[",r?t:0,e),N(c,{id:e}),p("]",t)].join("\n")},o=function(n,t){var r=e(JSON.stringify(n));return N(v(r,t),{class:"jstStr"})},i=function(n,t){return N(v(n,t),{class:"jstNum"})},l=function(n,t){return N(v(n,t),{class:"jstBool"})},f=function(n){return N(v("null",n),{class:"jstNull"})},j=function(n,t,r){var s=v(e(JSON.stringify(n))+": ",r),c=N(u(t,r,!1),{});return N(s+c,{class:"jstProperty"})},m=function(){return N(",\n",{class:"jstComma"})},N=function(n,t){return d("span",t,n)},d=function(n,t,r){return"<"+n+Object.keys(t).map(function(n){return" "+n+'="'+t[n]+'"'}).join("")+">"+r+"</"+n+">"},g=function(n,t,r){return N(v(n,t),{class:"jstBracket"})+N("",{class:"jstFold",onclick:"JSONTree.toggle('"+r+"')"})};this.toggle=function(n){var t=document.getElementById(n),r=t.parentNode,e=t.previousElementSibling;""===t.className?(t.className="jstHiddenBlock",r.className="jstFolded",e.className="jstExpand"):(t.className="",r.className="",e.className="jstFold")};var p=function(n,t){return N(v(n,t),{})},v=function(n,t){return Array(2*t+1).join(" ")+n};return this}();
+	</script>
+	<body class="standard">
+		<div class="app" id="app">
+<div id="aside" class="app-aside fade box-shadow-x folded dark">
+	<div class="sidenav modal-dialog dk">
+		<div class="navbar">
+			<a href="#" class="navbar-brand">
+			<span class="d-inline small"><img src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png"></span>
+			</a>
+		</div>
+		<div class="flex hide-scroll">
+			<div class="scroll">
+				<div class="nav-border b-primary">
+					<ul class="nav bg">
+						<li>
+							<a href="index.html">
+							<span class="nav-icon">
+							<i class="fa fa-align-left"></i>
+							</span>
+							<span class="nav-text">Tests</span>
+							</a>
+						</li>
+												<li>
+							<a href="tag.html">
+							<span class="nav-icon">
+							<i class="fa fa-tag"></i>
+							</span>
+							<span class="nav-text">Tags</span>
+							</a>
+						</li>
+						<li>
+							<a href="exception.html">
+							<span class="nav-icon">
+							<i class="fa fa-warning"></i>
+							</span>
+							<span class="nav-text">Exceptions</span>
+							</a>
+						</li>
+						<li>
+							<a href="dashboard.html">
+							<span class="nav-icon">
+							<i class="fa fa-dashboard"></i>
+							</span>
+							<span class="nav-text">Dashboard</span>
+							</a>
+						</li>
+						<li class="pb-2 hidden-folded"></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="no-shrink">
+			<div class="nav-fold">
+				<a id="lightsout" class="d-flex p-2-3"><span><i class="fa fa-desktop"></i></span></a>
+				<div class="hidden-folded flex p-2-3 bg">
+					<div class="d-flex p-1">
+						<a href="http://github.com/extent-framework/extentreports" class="flex text-nowrap"><i class="fa fa-github"></i></a>
+						<a href="http://extentreports.com" class="px-2"><i class="fa fa-book"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>			<div id="content" class="app-content box-shadow-0" role="main">
+				<div id="content" class="app-content box-shadow-2 box-radius-2" role="main">
+					<div class="content-header white  box-shadow-2" id="content-header">
+						<div class="navbar navbar-expand-lg">
+							<div class="input-group flex mr-1">
+				              	<input id="qt" type="text" class="form-control px-0 no-bg no-border no-shadow search" placeholder="Search..." required="">
+				              	<span class="input-group-btn">
+				                	<button class="btn no-bg no-border no-shadow" type="button"><i class="fa fa-search text-muted text-xs"></i></button>
+				              	</span>
+				            </div>
+							<ul class="nav nav-xs flex-row no-border pull-right">
+								<li class="nav-item dropdown">
+									<a class="nav-link b-l" data-toggle="dropdown">
+									<span class="text-xs">
+									<i class="fa fa-warning"></i>
+									<i class="fa fa-caret-down"></i>
+									</span>
+									</a>
+									<div class="dropdown-menu pt-0 mt-2 animate fadeIn">
+										<a class="dropdown-item" href="#"><span class="tf" status="pass"><i class="fa fa-dot-circle-o text-success"></i>Pass</span></a>
+										<a class="dropdown-item" href="#"><span class="tf" status="fail"><i class="fa fa-dot-circle-o text-danger"></i>Fail</span></a>
+										
+										
+										
+										<a class="dropdown-item" href="#"><span class="tf" status="skip"><i class="fa fa-dot-circle-o text-blue"></i>Skip</span></a>
+										<div class="dropdown-divider"></div>
+										<a class="dropdown-item" href="#"><span class="tf" status="clear"><i class="fa fa-dot-circle-o text-warn"></i>Clear</span></a>
+									</div>
+								</li>
+						        <li class="nav-item dropdown">
+							        <a class="nav-link b-l" data-toggle="dropdown">
+							            <span class="text-xs">
+								      		<i class="fa fa-tag"></i>
+								      		<i class="fa fa-caret-down"></i>
+								        </span>
+							        </a>
+							        <div class="dropdown-menu pt-0 mt-2 animate fadeIn">
+						    	        <a class="dropdown-item" href="#"><span class="cf">@ServiceRequests</span></a>
+						    	        <a class="dropdown-item" href="#"><span class="cf">@Profile</span></a>
+						    	        <a class="dropdown-item" href="#"><span class="cf">@PFLUPD</span></a>
+						    	        <a class="dropdown-item" href="#"><span class="cf">@Hybrid</span></a>
+						    	        <a class="dropdown-item" href="#"><span class="cf">@PFLNOT</span></a>
+						    	        <a class="dropdown-item" href="#"><span class="cf">@PFLGEN</span></a>
+						    	        <a class="dropdown-item" href="#"><span class="cf">@PFLADD</span></a>
+						    	        <a class="dropdown-item" href="#"><span class="cf">@PFLID</span></a>
+						    	        <a class="dropdown-item" href="#"><span class="cf">@MXDIR</span></a>
+						    	        <div class="dropdown-divider"></div>
+						    	        <a class="dropdown-item" href="#"><span class="tf" status="clear"><i class="fa fa-dot-circle-o text-warn"></i>Clear</span></a>
+						    	      </div>
+						        </li>
+						        <li class="nav-item lightsout"><a class="nav-link b-l" href="#"><span><i class="fa fa-desktop"></i></span></a></li>
+								<li><a href="#" class="b-l"><span class="badge badge-pull">ExtentReports</span></a></li>
+								<li><a href="#" class="b-l"><span class="badge badge-pull">4.0</span></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="content-main " id="content-main">
+						<div class="padding">
+							<div class="row justify-content-md-center">
+								<div class="col-md-8 col-sm-12">
+									<div class="logger-content">
+										<h6 class="mb-3 ml-1">Test Logs</h6>
+											<div class="tsc" status="fail">
+											<div class="st fail test l0" 
+												tags="@ServiceRequests @Profile @PFLUPD"
+												devices="">
+												<span class="tt">08.06.2021 14:11:39</span>&nbsp;
+												<span class="ts">fail</span>&nbsp;&nbsp;
+												<span class="tn">[CLM Service Requests - Profile] started</span>
+												<span class="category-list">
+													<span class="category badge"><i class="fa fa-tag"></i> @ServiceRequests</span>
+													<span class="category badge"><i class="fa fa-tag"></i> @Profile</span>
+													<span class="category badge"><i class="fa fa-tag"></i> @PFLUPD</span>
+												</span>
+												<span class="author-list">
+												</span>
+												<span class="device-list">
+												</span>
+												
+											</div>
+											<div class="st fail test l1" 
+												tags="@ServiceRequests @Profile @PFLUPD @Hybrid @PFLNOT"
+												devices="">
+												<span class="tt">08.06.2021 14:11:39</span>&nbsp;
+												<span class="ts">fail</span>&nbsp;&nbsp;
+												<span class="tn">|---[Hybrid Modify Profile Contact & Notification Preferences] started</span>
+												<span class="category-list">
+													<span class="category badge"><i class="fa fa-tag"></i> @ServiceRequests</span>
+													<span class="category badge"><i class="fa fa-tag"></i> @Profile</span>
+													<span class="category badge"><i class="fa fa-tag"></i> @PFLUPD</span>
+													<span class="category badge"><i class="fa fa-tag"></i> @Hybrid</span>
+													<span class="category badge"><i class="fa fa-tag"></i> @PFLNOT</span>
+												</span>
+												<span class="author-list">
+												</span>
+												<span class="device-list">
+												</span>
+												
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:11:39</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in] started</span>
+												
+												<div class="st info">
+													<span class="tt">08.06.2021 14:11:50</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in]</span>
+													
+													<span class="td">CLM has been launched</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:11:59</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in]</span>
+													
+													<span class="td">Login page loaded</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:11:59</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in]</span>
+													
+													<span class="td">Entered username</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:11:59</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in]</span>
+													
+													<span class="td">Entered password</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:02</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in]</span>
+													
+													<span class="td">Pressed enter and logged in</span>
+												</div>
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:12:02</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given search with "Active" msisdn] started</span>
+												
+												<div class="st pass">
+													<span class="tt">08.06.2021 14:12:02</span>&nbsp;
+													<span class="ts">pass</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given search with "Active" msisdn]</span>
+													
+													<span class="td"><table class='runtime-table table-striped table'><tr><td>MSISDN</td><td>680975855</td></tr></table></span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:11</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given search with "Active" msisdn]</span>
+													
+													<span class="td">Entered MSISDN</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:13</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given search with "Active" msisdn]</span>
+													
+													<span class="td">Clicked Search</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:27</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given search with "Active" msisdn]</span>
+													
+													<span class="td">Clicked Active record</span>
+												</div>
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:12:27</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[When go to service request page] started</span>
+												
+												<div class="st pass">
+													<span class="tt">08.06.2021 14:12:41</span>&nbsp;
+													<span class="ts">pass</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[When go to service request page]</span>
+													
+													<span class="td"></span>
+												</div>
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:12:41</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And modify contact & notification details] started</span>
+												
+												<div class="st pass">
+													<span class="tt">08.06.2021 14:12:41</span>&nbsp;
+													<span class="ts">pass</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And modify contact & notification details]</span>
+													
+													<span class="td"><table class='runtime-table table-striped table'><tr><td>email</td><td>modify10@gmail.com</td></tr><tr><td>contact</td><td>8755353533</td></tr></table></span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:13:02</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And modify contact & notification details]</span>
+													
+													<span class="td">Entered Notification Email as modify10@gmail.com</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:13:02</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And modify contact & notification details]</span>
+													
+													<span class="td">Entered contact number as 8755353533</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:13:02</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And modify contact & notification details]</span>
+													
+													<span class="td">Moving to next page</span>
+												</div>
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:13:02</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And submit the flow] started</span>
+												
+												<div class="st info">
+													<span class="tt">08.06.2021 14:13:03</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And submit the flow]</span>
+													
+													<span class="td">Flow submitted</span>
+												</div>
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:13:03</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Then flow submitted successfully] started</span>
+												
+												<div class="st info">
+													<span class="tt">08.06.2021 14:13:06</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Then flow submitted successfully]</span>
+													
+													<span class="td">Request Number: 000137</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:13:06</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Then flow submitted successfully]</span>
+													
+													<span class="td">Service Request Status: COMPLETED</span>
+												</div>
+											</div>
+											<div class="st fail test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:13:09</span>&nbsp;
+												<span class="ts">fail</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And verify modified info] started</span>
+												
+												<div class="st fail">
+													<span class="tt">08.06.2021 14:13:09</span>&nbsp;
+													<span class="ts">fail</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And verify modified info]</span>
+													
+													<span class="td">threw an exception<br><textarea disabled class="code-block">java.lang.NullPointerException
+	at framework.utils.OracleDataProvider.executeSelectQuery(OracleDataProvider.java:77)
+	at framework.utils.OracleDataProvider.getProfileInfo(OracleDataProvider.java:240)
+	at stepDefinitions.serviceRequests.profile.pflupd.ModifyContactAndNotificationSteps.verify_modified_info(ModifyContactAndNotificationSteps.java:42)
+	at ?.verify modified info(file:///C:/Git/clm_selenide_cucumber/src/test/resources/functionalTests/MTNC/5_Service_Requests_profile.feature:30)
+</textarea></span>
+												</div>
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:13:09</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[stepDefinitions.hooks.Generic.captureScenario(io.cucumber.java.Scenario)] started</span>
+												
+												<div class="st info">
+													<span class="tt">08.06.2021 14:13:09</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[stepDefinitions.hooks.Generic.captureScenario(io.cucumber.java.Scenario)]</span>
+													<span class="tm"><img class='r-img' onerror='this.style.display="none"' data-featherlight='../screenshots/embedded1.png' src='../screenshots/embedded1.png'></span>
+													<span class="td"></span>
+												</div>
+											</div>
+											<div class="st fail test l1" 
+												tags="@ServiceRequests @Profile @PFLUPD @Hybrid @PFLGEN"
+												devices="">
+												<span class="tt">08.06.2021 14:11:39</span>&nbsp;
+												<span class="ts">fail</span>&nbsp;&nbsp;
+												<span class="tn">|---[Prepaid Modify Profile] started</span>
+												<span class="category-list">
+													<span class="category badge"><i class="fa fa-tag"></i> @ServiceRequests</span>
+													<span class="category badge"><i class="fa fa-tag"></i> @Profile</span>
+													<span class="category badge"><i class="fa fa-tag"></i> @PFLUPD</span>
+													<span class="category badge"><i class="fa fa-tag"></i> @Hybrid</span>
+													<span class="category badge"><i class="fa fa-tag"></i> @PFLGEN</span>
+												</span>
+												<span class="author-list">
+												</span>
+												<span class="device-list">
+												</span>
+												
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:11:39</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in] started</span>
+												
+												<div class="st info">
+													<span class="tt">08.06.2021 14:11:50</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in]</span>
+													
+													<span class="td">CLM has been launched</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:11:56</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in]</span>
+													
+													<span class="td">Login page loaded</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:11:56</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in]</span>
+													
+													<span class="td">Entered username</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:11:57</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in]</span>
+													
+													<span class="td">Entered password</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:11:59</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in]</span>
+													
+													<span class="td">Pressed enter and logged in</span>
+												</div>
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:11:59</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given search with "Active" msisdn] started</span>
+												
+												<div class="st pass">
+													<span class="tt">08.06.2021 14:11:59</span>&nbsp;
+													<span class="ts">pass</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given search with "Active" msisdn]</span>
+													
+													<span class="td"><table class='runtime-table table-striped table'><tr><td>MSISDN</td><td>670962284</td></tr></table></span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:07</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given search with "Active" msisdn]</span>
+													
+													<span class="td">Entered MSISDN</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:08</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given search with "Active" msisdn]</span>
+													
+													<span class="td">Clicked Search</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:21</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given search with "Active" msisdn]</span>
+													
+													<span class="td">Clicked Active record</span>
+												</div>
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:12:21</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[When go to service request page] started</span>
+												
+												<div class="st pass">
+													<span class="tt">08.06.2021 14:12:36</span>&nbsp;
+													<span class="ts">pass</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[When go to service request page]</span>
+													
+													<span class="td"></span>
+												</div>
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:12:36</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And modify profile details] started</span>
+												
+												<div class="st pass">
+													<span class="tt">08.06.2021 14:12:36</span>&nbsp;
+													<span class="ts">pass</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And modify profile details]</span>
+													
+													<span class="td"><table class='runtime-table table-striped table'><tr><td>FirstName</td><td>Autotest1</td></tr><tr><td>lastName</td><td>profile</td></tr><tr><td>gender</td><td>Male</td></tr><tr><td>DateofBirth</td><td>03/04/1997</td></tr></table></span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:50</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And modify profile details]</span>
+													
+													<span class="td">Entered First Name as Autotest1 vlH</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:50</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And modify profile details]</span>
+													
+													<span class="td">Entered Last Name as profile Pvh</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:50</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And modify profile details]</span>
+													
+													<span class="td">Entered DOB as 03/04/1997</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:50</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And modify profile details]</span>
+													
+													<span class="td">Moving to next page</span>
+												</div>
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:12:50</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And submit the flow] started</span>
+												
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:51</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And submit the flow]</span>
+													
+													<span class="td">Flow submitted</span>
+												</div>
+											</div>
+											<div class="st fail test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:12:51</span>&nbsp;
+												<span class="ts">fail</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Then flow submitted successfully] started</span>
+												
+												<div class="st info">
+													<span class="tt">08.06.2021 14:13:12</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Then flow submitted successfully]</span>
+													
+													<span class="td">000135,PFLGEN</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:13:12</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Then flow submitted successfully]</span>
+													
+													<span class="td">Profile Level Pending Order Failed</span>
+												</div>
+												<div class="st fail">
+													<span class="tt">08.06.2021 14:13:12</span>&nbsp;
+													<span class="ts">fail</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Then flow submitted successfully]</span>
+													
+													<span class="td">threw an exception<br><textarea disabled class="code-block">java.lang.AssertionError: expected [PASSED] but found [FAILED]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+	at org.testng.Assert.assertEquals(Assert.java:122)
+	at org.testng.Assert.assertEquals(Assert.java:629)
+	at org.testng.Assert.assertEquals(Assert.java:639)
+	at stepDefinitions.serviceRequests.common.CommonPageSteps.flow_submitted_successfully(CommonPageSteps.java:21)
+	at ?.flow submitted successfully(file:///C:/Git/clm_selenide_cucumber/src/test/resources/functionalTests/MTNC/5_Service_Requests_profile.feature:18)
+</textarea></span>
+												</div>
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:13:12</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[stepDefinitions.hooks.Generic.captureScenario(io.cucumber.java.Scenario)] started</span>
+												
+												<div class="st info">
+													<span class="tt">08.06.2021 14:13:13</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[stepDefinitions.hooks.Generic.captureScenario(io.cucumber.java.Scenario)]</span>
+													<span class="tm"><img class='r-img' onerror='this.style.display="none"' data-featherlight='../screenshots/embedded2.png' src='../screenshots/embedded2.png'></span>
+													<span class="td"></span>
+												</div>
+											</div>
+											<div class="st fail test l1" 
+												tags="@ServiceRequests @Profile @PFLUPD @Hybrid @PFLADD"
+												devices="">
+												<span class="tt">08.06.2021 14:11:39</span>&nbsp;
+												<span class="ts">fail</span>&nbsp;&nbsp;
+												<span class="tn">|---[Postpaid Modify Profile Address] started</span>
+												<span class="category-list">
+													<span class="category badge"><i class="fa fa-tag"></i> @ServiceRequests</span>
+													<span class="category badge"><i class="fa fa-tag"></i> @Profile</span>
+													<span class="category badge"><i class="fa fa-tag"></i> @PFLUPD</span>
+													<span class="category badge"><i class="fa fa-tag"></i> @Hybrid</span>
+													<span class="category badge"><i class="fa fa-tag"></i> @PFLADD</span>
+												</span>
+												<span class="author-list">
+												</span>
+												<span class="device-list">
+												</span>
+												
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:11:39</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in] started</span>
+												
+												<div class="st info">
+													<span class="tt">08.06.2021 14:11:51</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in]</span>
+													
+													<span class="td">CLM has been launched</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:01</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in]</span>
+													
+													<span class="td">Login page loaded</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:01</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in]</span>
+													
+													<span class="td">Entered username</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:01</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in]</span>
+													
+													<span class="td">Entered password</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:04</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in]</span>
+													
+													<span class="td">Pressed enter and logged in</span>
+												</div>
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:12:04</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given search with "Active" msisdn] started</span>
+												
+												<div class="st pass">
+													<span class="tt">08.06.2021 14:12:04</span>&nbsp;
+													<span class="ts">pass</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given search with "Active" msisdn]</span>
+													
+													<span class="td"><table class='runtime-table table-striped table'><tr><td>MSISDN</td><td>670962284</td></tr></table></span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:13</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given search with "Active" msisdn]</span>
+													
+													<span class="td">Entered MSISDN</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:14</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given search with "Active" msisdn]</span>
+													
+													<span class="td">Clicked Search</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:24</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given search with "Active" msisdn]</span>
+													
+													<span class="td">Clicked Active record</span>
+												</div>
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:12:24</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[When go to service request page] started</span>
+												
+												<div class="st pass">
+													<span class="tt">08.06.2021 14:12:39</span>&nbsp;
+													<span class="ts">pass</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[When go to service request page]</span>
+													
+													<span class="td"></span>
+												</div>
+											</div>
+											<div class="st fail test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:12:39</span>&nbsp;
+												<span class="ts">fail</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And changed address details] started</span>
+												
+												<div class="st pass">
+													<span class="tt">08.06.2021 14:12:39</span>&nbsp;
+													<span class="ts">pass</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And changed address details]</span>
+													
+													<span class="td"><table class='runtime-table table-striped table'><tr><td>addresstype</td><td>Permanent</td></tr><tr><td>postboxnum</td><td>CHE124</td></tr><tr><td>country</td><td>Cameroon</td></tr><tr><td>nationality</td><td>Centre</td></tr><tr><td>city</td><td>Bamoko</td></tr></table></span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:54</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And changed address details]</span>
+													
+													<span class="td">modified Address Type as Permanent</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:54</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And changed address details]</span>
+													
+													<span class="td">modified Post Box Number as CHE124</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:54</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And changed address details]</span>
+													
+													<span class="td">modified Country as Cameroon</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:55</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And changed address details]</span>
+													
+													<span class="td">modified region as Centre</span>
+												</div>
+												<div class="st fail">
+													<span class="tt">08.06.2021 14:13:15</span>&nbsp;
+													<span class="ts">fail</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And changed address details]</span>
+													
+													<span class="td">threw an exception<br><textarea disabled class="code-block">Element not found {By.name: locality/option[text:Bamoko]}
+Expected: exist
+Screenshot: file:/C:/Git/clm_selenide_cucumber/target/reports/tests/1628239395058.1.png
+Page source: file:/C:/Git/clm_selenide_cucumber/target/reports/tests/1628239395058.1.html
+Timeout: 20 s.
+Caused by: NoSuchElementException: Cannot locate element with text: Bamoko
+	at com.codeborne.selenide.commands.SelectOptionByTextOrIndex.selectOptionsByTexts(SelectOptionByTextOrIndex.java:39)
+	at com.codeborne.selenide.commands.SelectOptionByTextOrIndex.execute(SelectOptionByTextOrIndex.java:24)
+	at com.codeborne.selenide.commands.SelectOptionByTextOrIndex.execute(SelectOptionByTextOrIndex.java:15)
+	at com.codeborne.selenide.commands.Commands.execute(Commands.java:155)
+	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:133)
+	at com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:85)
+	at com.sun.proxy.$Proxy16.selectOption(Unknown Source)
+	at pages.serviceRequests.profile.pflupd.ModifyAddressDetails.modify_profile_address_details(ModifyAddressDetails.java:34)
+	at stepDefinitions.serviceRequests.profile.pflupd.ModifyAddressDetailsSteps.modify_profile_address_details(ModifyAddressDetailsSteps.java:25)
+	at ?.changed address details(file:///C:/Git/clm_selenide_cucumber/src/test/resources/functionalTests/MTNC/5_Service_Requests_profile.feature:50)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate element with text: Bamoko
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'BAVYSYAKI', ip: '10.50.56.10', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_231'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:147)
+	at com.codeborne.selenide.commands.SelectOptionByTextOrIndex.selectOptionsByTexts(SelectOptionByTextOrIndex.java:36)
+	at com.codeborne.selenide.commands.SelectOptionByTextOrIndex.execute(SelectOptionByTextOrIndex.java:24)
+	at com.codeborne.selenide.commands.SelectOptionByTextOrIndex.execute(SelectOptionByTextOrIndex.java:15)
+	at com.codeborne.selenide.commands.Commands.execute(Commands.java:155)
+	at com.codeborne.selenide.impl.SelenideElementProxy.dispatchAndRetry(SelenideElementProxy.java:133)
+	at com.codeborne.selenide.impl.SelenideElementProxy.invoke(SelenideElementProxy.java:85)
+	at com.sun.proxy.$Proxy16.selectOption(Unknown Source)
+	at pages.serviceRequests.profile.pflupd.ModifyAddressDetails.modify_profile_address_details(ModifyAddressDetails.java:34)
+	at stepDefinitions.serviceRequests.profile.pflupd.ModifyAddressDetailsSteps.modify_profile_address_details(ModifyAddressDetailsSteps.java:25)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at io.cucumber.java.Invoker.doInvoke(Invoker.java:66)
+	at io.cucumber.java.Invoker.invoke(Invoker.java:24)
+	at io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)
+	at io.cucumber.java.JavaStepDefinition.execute(JavaStepDefinition.java:29)
+	at io.cucumber.core.runner.CoreStepDefinition.execute(CoreStepDefinition.java:66)
+	at io.cucumber.core.runner.PickleStepDefinitionMatch.runStep(PickleStepDefinitionMatch.java:63)
+	at io.cucumber.core.runner.ExecutionMode$1.execute(ExecutionMode.java:10)
+	at io.cucumber.core.runner.TestStep.executeStep(TestStep.java:92)
+	at io.cucumber.core.runner.TestStep.run(TestStep.java:64)
+	at io.cucumber.core.runner.PickleStepTestStep.run(PickleStepTestStep.java:51)
+	at io.cucumber.core.runner.TestCase.run(TestCase.java:104)
+	at io.cucumber.core.runner.Runner.runPickle(Runner.java:71)
+	at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$0(TestNGCucumberRunner.java:116)
+	at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:117)
+	at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:113)
+	at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:31)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:77)
+	at org.testng.internal.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:15)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+</textarea></span>
+												</div>
+											</div>
+											<div class="st skip test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:13:15</span>&nbsp;
+												<span class="ts">skip</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And submit the flow] started</span>
+												
+												<div class="st skip">
+													<span class="tt">08.06.2021 14:13:15</span>&nbsp;
+													<span class="ts">skip</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And submit the flow]</span>
+													
+													<span class="td">Step skipped</span>
+												</div>
+											</div>
+											<div class="st skip test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:13:15</span>&nbsp;
+												<span class="ts">skip</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Then flow submitted successfully] started</span>
+												
+												<div class="st skip">
+													<span class="tt">08.06.2021 14:13:15</span>&nbsp;
+													<span class="ts">skip</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Then flow submitted successfully]</span>
+													
+													<span class="td">Step skipped</span>
+												</div>
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:13:15</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[stepDefinitions.hooks.Generic.captureScenario(io.cucumber.java.Scenario)] started</span>
+												
+												<div class="st info">
+													<span class="tt">08.06.2021 14:13:15</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[stepDefinitions.hooks.Generic.captureScenario(io.cucumber.java.Scenario)]</span>
+													<span class="tm"><img class='r-img' onerror='this.style.display="none"' data-featherlight='../screenshots/embedded3.png' src='../screenshots/embedded3.png'></span>
+													<span class="td"></span>
+												</div>
+											</div>
+											<div class="st pass test l1" 
+												tags="@ServiceRequests @Profile @PFLUPD @Hybrid @PFLID"
+												devices="">
+												<span class="tt">08.06.2021 14:11:39</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">|---[Hybrid Modify Profile Identification Details] started</span>
+												<span class="category-list">
+													<span class="category badge"><i class="fa fa-tag"></i> @ServiceRequests</span>
+													<span class="category badge"><i class="fa fa-tag"></i> @Profile</span>
+													<span class="category badge"><i class="fa fa-tag"></i> @PFLUPD</span>
+													<span class="category badge"><i class="fa fa-tag"></i> @Hybrid</span>
+													<span class="category badge"><i class="fa fa-tag"></i> @PFLID</span>
+												</span>
+												<span class="author-list">
+												</span>
+												<span class="device-list">
+												</span>
+												
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:11:39</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in] started</span>
+												
+												<div class="st info">
+													<span class="tt">08.06.2021 14:11:51</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in]</span>
+													
+													<span class="td">CLM has been launched</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:11:56</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in]</span>
+													
+													<span class="td">Login page loaded</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:11:56</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in]</span>
+													
+													<span class="td">Entered username</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:11:56</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in]</span>
+													
+													<span class="td">Entered password</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:11:58</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in]</span>
+													
+													<span class="td">Pressed enter and logged in</span>
+												</div>
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:11:58</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given search with "Active" msisdn] started</span>
+												
+												<div class="st pass">
+													<span class="tt">08.06.2021 14:11:58</span>&nbsp;
+													<span class="ts">pass</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given search with "Active" msisdn]</span>
+													
+													<span class="td"><table class='runtime-table table-striped table'><tr><td>MSISDN</td><td>670962284</td></tr></table></span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:06</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given search with "Active" msisdn]</span>
+													
+													<span class="td">Entered MSISDN</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:07</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given search with "Active" msisdn]</span>
+													
+													<span class="td">Clicked Search</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:18</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given search with "Active" msisdn]</span>
+													
+													<span class="td">Clicked Active record</span>
+												</div>
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:12:18</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[When go to service request page] started</span>
+												
+												<div class="st pass">
+													<span class="tt">08.06.2021 14:12:32</span>&nbsp;
+													<span class="ts">pass</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[When go to service request page]</span>
+													
+													<span class="td"></span>
+												</div>
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:12:32</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And modify identification details] started</span>
+												
+												<div class="st pass">
+													<span class="tt">08.06.2021 14:12:32</span>&nbsp;
+													<span class="ts">pass</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And modify identification details]</span>
+													
+													<span class="td"><table class='runtime-table table-striped table'><tr><td>placeOfIssue</td><td>Bangalore</td></tr><tr><td>issuedDate</td><td>14/03/1995</td></tr><tr><td>expiryDate</td><td>13/03/2045</td></tr><tr><td>contactnum</td><td>9763754443</td></tr></table></span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:48</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And modify identification details]</span>
+													
+													<span class="td">Modified Place of Issue as Bangalore</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:48</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And modify identification details]</span>
+													
+													<span class="td">Modified Date of issue 14/03/1995</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:48</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And modify identification details]</span>
+													
+													<span class="td">Modified expiry Date 13/03/2045</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:56</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And modify identification details]</span>
+													
+													<span class="td">Moving to next page</span>
+												</div>
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:12:56</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And submit the flow] started</span>
+												
+												<div class="st info">
+													<span class="tt">08.06.2021 14:12:57</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And submit the flow]</span>
+													
+													<span class="td">Flow submitted</span>
+												</div>
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:12:57</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Then flow submitted successfully] started</span>
+												
+												<div class="st info">
+													<span class="tt">08.06.2021 14:13:01</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Then flow submitted successfully]</span>
+													
+													<span class="td">Request Number: 000136</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:13:01</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Then flow submitted successfully]</span>
+													
+													<span class="td">Service Request Status: COMPLETED</span>
+												</div>
+											</div>
+											<div class="st fail test l1" 
+												tags="@ServiceRequests @Profile @PFLUPD @Hybrid @MXDIR"
+												devices="">
+												<span class="tt">08.06.2021 14:13:24</span>&nbsp;
+												<span class="ts">fail</span>&nbsp;&nbsp;
+												<span class="tn">|---[Postpaid Modify Profile X-Directory Level] started</span>
+												<span class="category-list">
+													<span class="category badge"><i class="fa fa-tag"></i> @ServiceRequests</span>
+													<span class="category badge"><i class="fa fa-tag"></i> @Profile</span>
+													<span class="category badge"><i class="fa fa-tag"></i> @PFLUPD</span>
+													<span class="category badge"><i class="fa fa-tag"></i> @Hybrid</span>
+													<span class="category badge"><i class="fa fa-tag"></i> @MXDIR</span>
+												</span>
+												<span class="author-list">
+												</span>
+												<span class="device-list">
+												</span>
+												
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:13:24</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in] started</span>
+												
+												<div class="st info">
+													<span class="tt">08.06.2021 14:13:33</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in]</span>
+													
+													<span class="td">CLM has been launched</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:13:38</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in]</span>
+													
+													<span class="td">Login page loaded</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:13:39</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in]</span>
+													
+													<span class="td">Entered username</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:13:39</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in]</span>
+													
+													<span class="td">Entered password</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:13:41</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given user is logged in]</span>
+													
+													<span class="td">Pressed enter and logged in</span>
+												</div>
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:13:41</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given search with "Active" msisdn] started</span>
+												
+												<div class="st pass">
+													<span class="tt">08.06.2021 14:13:41</span>&nbsp;
+													<span class="ts">pass</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given search with "Active" msisdn]</span>
+													
+													<span class="td"><table class='runtime-table table-striped table'><tr><td>MSISDN</td><td>670962284</td></tr></table></span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:13:49</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given search with "Active" msisdn]</span>
+													
+													<span class="td">Entered MSISDN</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:13:50</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given search with "Active" msisdn]</span>
+													
+													<span class="td">Clicked Search</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:13:59</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Given search with "Active" msisdn]</span>
+													
+													<span class="td">Clicked Active record</span>
+												</div>
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:13:59</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[When go to service request page] started</span>
+												
+												<div class="st pass">
+													<span class="tt">08.06.2021 14:14:11</span>&nbsp;
+													<span class="ts">pass</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[When go to service request page]</span>
+													
+													<span class="td"></span>
+												</div>
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:14:11</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And modify x directory level] started</span>
+												
+												<div class="st pass">
+													<span class="tt">08.06.2021 14:14:11</span>&nbsp;
+													<span class="ts">pass</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And modify x directory level]</span>
+													
+													<span class="td"><table class='runtime-table table-striped table'><tr><td>LEVEL</td><td>Level 5</td></tr></table></span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:14:26</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And modify x directory level]</span>
+													
+													<span class="td">Selected X directory level as Level 5</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:14:26</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And modify x directory level]</span>
+													
+													<span class="td">Moving to next page</span>
+												</div>
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:14:26</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And submit the flow] started</span>
+												
+												<div class="st info">
+													<span class="tt">08.06.2021 14:14:27</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[And submit the flow]</span>
+													
+													<span class="td">Flow submitted</span>
+												</div>
+											</div>
+											<div class="st fail test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:14:27</span>&nbsp;
+												<span class="ts">fail</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Then flow submitted successfully] started</span>
+												
+												<div class="st info">
+													<span class="tt">08.06.2021 14:14:47</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Then flow submitted successfully]</span>
+													
+													<span class="td">000138,MXDIR</span>
+												</div>
+												<div class="st info">
+													<span class="tt">08.06.2021 14:14:48</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Then flow submitted successfully]</span>
+													
+													<span class="td">Requested X-Directory level is same as Current X-Directory Level</span>
+												</div>
+												<div class="st fail">
+													<span class="tt">08.06.2021 14:14:48</span>&nbsp;
+													<span class="ts">fail</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[Then flow submitted successfully]</span>
+													
+													<span class="td">threw an exception<br><textarea disabled class="code-block">java.lang.AssertionError: expected [PASSED] but found [FAILED]
+	at org.testng.Assert.fail(Assert.java:99)
+	at org.testng.Assert.failNotEquals(Assert.java:1037)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+	at org.testng.Assert.assertEquals(Assert.java:122)
+	at org.testng.Assert.assertEquals(Assert.java:629)
+	at org.testng.Assert.assertEquals(Assert.java:639)
+	at stepDefinitions.serviceRequests.common.CommonPageSteps.flow_submitted_successfully(CommonPageSteps.java:21)
+	at ?.flow submitted successfully(file:///C:/Git/clm_selenide_cucumber/src/test/resources/functionalTests/MTNC/5_Service_Requests_profile.feature:67)
+</textarea></span>
+												</div>
+											</div>
+											<div class="st pass test l2" 
+												tags=""
+												devices="">
+												<span class="tt">08.06.2021 14:14:48</span>&nbsp;
+												<span class="ts">pass</span>&nbsp;&nbsp;
+												<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[stepDefinitions.hooks.Generic.captureScenario(io.cucumber.java.Scenario)] started</span>
+												
+												<div class="st info">
+													<span class="tt">08.06.2021 14:14:48</span>&nbsp;
+													<span class="ts">info</span>&nbsp;&nbsp; 
+													<span class="tn">&nbsp;&nbsp;&nbsp;&nbsp;|---[stepDefinitions.hooks.Generic.captureScenario(io.cucumber.java.Scenario)]</span>
+													<span class="tm"><img class='r-img' onerror='this.style.display="none"' data-featherlight='../screenshots/embedded4.png' src='../screenshots/embedded4.png'></span>
+													<span class="td"></span>
+												</div>
+											</div>
+											</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@832f979664f9d68bf618db3ac87498ac6c1a6390/logger/js/logger-scripts.js"></script>
+	</body>
+</html>

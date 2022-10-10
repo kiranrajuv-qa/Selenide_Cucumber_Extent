@@ -1,0 +1,114 @@
+{
+	"offering": {
+		"customerCategory": "INDIVIDUAL",
+		"customerSubCategory": "MTNSTAFF",
+		"subService": "Voice",
+		"technology": "GSM"
+	},
+	"whiteSim": {
+		"msisdnCategory": "MTNB MOBILE CATEGORY"
+	},
+	"profileDetails": {
+		"basicDetails": {
+			"firstName": "Kiran",
+			"middleName": "Raju",
+			"lastName": "V",
+			"title": "",
+			"gender": "Male",
+			"suffix": "",
+			"dob": "03/04/1980",
+			"vip": false,
+			"country": "BENIN",
+			"nationality": "Beninese"
+		},
+		"notificationDetails": {
+			"language": "FRENCH",
+			"medium": "Email",
+			"email": "kiran@tt.com",
+			"sms": "",
+			"phone": "",
+			"fax": "",
+			"timeFrom": "",
+			"timeTo": "",
+			"dndFlag": false
+		},
+		"address": {
+			"type": "Residence",
+			"street": "14th Cross",
+			"buildingNumber": "4",
+			"postCode": "560077",
+			"country": "",
+			"province": "",
+			"city": "",
+			"premises": "",
+			"locality": "",
+			"neighborhood": "",
+			"building": "",
+			"apartment": "",
+			"notes": ""
+		},
+		"demographics": {
+			"highestQualification": "",
+			"incomeRange": "",
+			"occupation": "",
+			"organizationName": "",
+			"industry": "",
+			"organizationContactNumber": ""
+		},
+		"referralDetails": {
+			"searchByServiceNumber": false,
+			"searchValue": "",
+			"customerID": "",
+			"firstName": "",
+			"middleName": "",
+			"lastName": "",
+			"contactNumber": "",
+			"title": "",
+			"suffix": ""
+		},
+		"contactPerson": {
+			"contactType": "",
+			"firstName": "",
+			"lastName": "",
+			"mobileNumber": "",
+			"title": "",
+			"suffix": "",
+			"email": ""
+		},
+		"identificationDetails": {
+			"documentPurpose": "IDPROOF",
+			"documentType": "STUDENT CARD",
+			"documentID": "F2435252",
+			"placeOfIssue": "Bangalore",
+			"issuedDate": "",
+			"expiryDate": ""
+		}
+	},
+	"serviceDetails": {
+		"totalLimit": "5000",
+		"allocatedServiceLimit": "5000",
+		"mobileMoneyFlag": true,
+		"selfCareFlag": false
+	},
+	"accountDetails": {
+		"accountType": "Convergent",
+		"limitType": "Monthly Usage Limit",
+		"creditLimit": "0",
+		"operatorAccountManager": {
+			"billPresLang": "FRENCH",
+			"billCurrency": "CFA FRANC",
+			"billPeriodicity": "Monthly",
+			"billCycle": "1ST TO 31ST MONTHLY BILL CYCLE",
+			"subsidiary": "MTN"
+		},
+		"others": {
+			"salesRepresentative": "",
+			"relationshipManager": "",
+			"dunningApplicable": true,
+			"dunningScheduleCode": "MTNB DUNNING SCHEDULE",
+			"taxPolicy": true,
+			"vatExempted": false,
+			"autoDebit": "no"
+		}
+	}
+}

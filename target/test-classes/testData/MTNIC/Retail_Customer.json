@@ -1,0 +1,117 @@
+{
+	"offering": {
+		"customerCategory": "CONSUMER BU",
+		"customerSubCategory": "301 GRAND PUBLIC",
+		"subService": "Voice",
+		"technology": "GSM"
+	},
+	"whiteSim": {
+		"msisdnCategory": "DEFAULT",
+		"msisdn": "62504848",
+		"simNumber": "",
+		"imsiNumber": ""
+	},
+	"profileDetails": {
+		"basicDetails": {
+			"firstName": "Kiran",
+			"middleName": "Raju",
+			"lastName": "V",
+			"title": "",
+			"gender": "",
+			"suffix": "",
+			"dob": "03/04/1980",
+			"vip": false,
+			"country": "Cote d'Ivoire",
+			"nationality": "Andorra"
+		},
+		"notificationDetails": {
+			"language": "ENGLISH",
+			"medium": "Email",
+			"email": "kiran@tt.com",
+			"sms": "",
+			"phone": "",
+			"fax": "",
+			"timeFrom": "",
+			"timeTo": "",
+			"dndFlag": false
+		},
+		"address": {
+			"type": "Residence",
+			"street": "14th Cross",
+			"buildingNumber": "4",
+			"postCode": "560077",
+			"country": "Cote d'Ivoire",
+			"province": "FROMAGER",
+			"city": "BIDIE",
+			"premises": "",
+			"locality": "near dominos",
+			"neighborhood": "",
+			"building": "",
+			"apartment": "",
+			"notes": ""
+		},
+		"demographics": {
+			"highestQualification": "",
+			"incomeRange": "",
+			"occupation": "",
+			"organizationName": "",
+			"industry": "",
+			"organizationContactNumber": ""
+		},
+		"referralDetails": {
+			"searchByServiceNumber": false,
+			"searchValue": "",
+			"customerID": "",
+			"firstName": "",
+			"middleName": "",
+			"lastName": "",
+			"contactNumber": "",
+			"title": "",
+			"suffix": ""
+		},
+		"contactPerson": {
+			"contactType": "",
+			"firstName": "",
+			"lastName": "",
+			"mobileNumber": "",
+			"title": "",
+			"suffix": "",
+			"email": ""
+		},
+		"identificationDetails": {
+			"documentPurpose": "IDPROOF",
+			"documentType": "STUDENT CARD",
+			"documentID": "F2435252",
+			"placeOfIssue": "",
+			"issuedDate": "",
+			"expiryDate": ""
+		}
+	},
+	"serviceDetails": {
+		"totalLimit": "0",
+		"allocatedServiceLimit": "0",
+		"mobileMoneyFlag": true,
+		"selfCareFlag": false
+	},
+	"accountDetails": {
+		"accountType": "Convergent",
+		"limitType": "Monthly Usage Limit",
+		"creditLimit": "0",
+		"operatorAccountManager": {
+			"billPresLang": "ENGLISH",
+			"billCurrency": "CFA FRANC",
+			"billPeriodicity": "Monthly",
+			"billCycle": "BILLCYCLE 1 TO 31",
+			"subsidiary": "MTNIC"
+		},
+		"others": {
+			"salesRepresentative": "",
+			"relationshipManager": "",
+			"dunningApplicable": true,
+			"dunningScheduleCode": "DEFAULT DUNNING SCHEDULE",
+			"taxPolicy": true,
+			"vatExempted": false,
+			"autoDebit": "no"
+		}
+	}
+}

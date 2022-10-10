@@ -1,0 +1,99 @@
+{
+	"profileDetails": {
+		"basicDetails": {
+			"businessName": "TECNOTREE CORP",
+			"industry": "CORPORATE",
+			"applicationMode": "",
+			"taxPayerNumber": "",
+			"numberOfEmployees": "3000",
+			"website": "",
+			"natureOfBusiness": "",
+			"creditVettingType": "Normal"
+		},
+		"parentDetails": {},
+		"customerCategorization": {
+			"customerCategory": "CORPORATE",
+			"customerSubCategory": "CORPORATE1",
+			"companyRegistrationNumber": "Email",
+			"tradeRegistrationNumber": "kiran@tt.com"
+		},
+		"identificationDetails": {
+			"documentPurpose": "IDPROOF",
+			"documentType": "PASSPORT : COR",
+			"documentID": "F2435252",
+			"placeOfIssue": "Bangalore",
+			"issuedDate": "14/03/1995",
+			"expiryDate": "13/03/2045"
+		},
+		"addressDetails": {
+			"type": "Office",
+			"street": "14th Cross",
+			"buildingNumber": "4",
+			"postCode": "560077",
+			"country": "Cameroon",
+			"province": "Far North",
+			"city": "Hina",
+			"address1": "sdegeef  fef",
+			"address2": "esf ef sdeg"
+		},
+		"notificationDetails": {
+			"language": "FRENCH",
+			"medium": "Email",
+			"email": "kiran@tt.com",
+			"sms": "",
+			"phone": "",
+			"fax": "",
+			"timeFrom": "",
+			"timeTo": ""
+		},
+		"billingAndPaymentPreferences": {
+			"billPresentationLanguage": "FRENCH",
+			"billCurrency": "CFA FRANC XOF",
+			"paymentMethods": "Cash",
+			"paymentCurrency": "CFA FRANC XOF",
+			"billingRegion": "Region2",
+			"billCycle": "1-31 ST BILL CYCLE",
+			"contactNumber": "01224511",
+			"taxPolicy": "DEFAULT TAX"
+		},
+		"contactPerson": {
+			"contactType": "Primary",
+			"firstName": "Raju",
+			"lastName": "V",
+			"mobileNumber": "643555255",
+			"title": "",
+			"suffix": "",
+			"email": ""
+		}
+	},
+	"serviceDetails": {
+		"offering": {
+			"msisdnCategory": "POSTPAID NORMAL",
+			"subService": "Voice",
+			"technology": "GSM",
+			"planType": "Plan"
+		},
+		"totalLimit": "1300",
+		"allocatedServiceLimit": "1300",
+		"mobileMoneyFlag": true,
+		"selfCareFlag": false
+	},
+	"accountDetails": {
+		"billingAccountName": "TT HR",
+		"accountOwner": {
+			"firstName": "Kiran",
+			"middleName": "",
+			"lastName": "Raju",
+			"gender": "Male",
+			"dob": "03/04/1989",
+			"suffix": ""
+		},
+		"billDispatchEmail": "kiran@tt.com",
+		"excludePrintBill": "No",
+		"operatorAccountManagerName": "Administrator",
+		"accountType": "Convergent",
+		"limitType": "Monthly Usage Limit",
+		"creditLimit": "0123456789",
+		"dunningScheduleCode": "DUNNING SCHEDULE"
+	}
+}
